@@ -40,7 +40,6 @@ class _GamePageState extends State<GamePage> {
                 child: Padding(
                   padding: EdgeInsets.all(20.0),
                   child: Column(
-                    mainAxisSize: MainAxisSize.max,
                     children: <Widget>[
                       Text(
                         '${Uri.decodeFull(question.question)}',
