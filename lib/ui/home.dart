@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:quiz_app/bloc/bloc.dart';
+import 'package:provider/provider.dart';
+import 'package:quiz_app/app/app_manager.dart';
 import 'package:quiz_app/model/category.dart';
 
 class HomePage extends StatefulWidget {
@@ -17,6 +17,8 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final app = Provider.of<AppManager>(context);
+
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -36,10 +38,9 @@ class _HomePageState extends State<HomePage> {
           ),
           RaisedButton(
             child: Text('GO'),
-            onPressed: () {
+            onPressed: () async {
               if (_selectedCategoryId != null)
-                BlocProvider.of<AppBloc>(context)
-                    .dispatch(LoadQuestions(categoryId: _selectedCategoryId));
+                await app.fetchQuestions(categoryId: _selectedCategoryId);
             },
           )
         ],
