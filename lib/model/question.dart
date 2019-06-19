@@ -1,8 +1,7 @@
-import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
 
 @immutable
-class Question extends Equatable {
+class Question {
   final String question;
   final List<String> answers;
   final String correctAnswer;

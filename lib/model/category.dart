@@ -1,8 +1,7 @@
-import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
 
 @immutable
-class Category extends Equatable {
+class Category {
   final int id;
   final String name;
 
