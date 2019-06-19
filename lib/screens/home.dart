@@ -24,6 +24,7 @@ class _HomePageState extends State<HomePage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           DropdownButton(
+            isExpanded: true,
             hint: Text('Choose category'),
             value: _selectedCategoryId,
             items: widget.categories

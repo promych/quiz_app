@@ -21,7 +21,7 @@ class ApiClient {
   }
 
   Future<List<Question>> getQuestions(int categoryId,
-      [int maxQuestions = 3]) async {
+      [int maxQuestions = 10]) async {
     String url = _baseUrl +
         '/api.php?category=$categoryId&amount=$maxQuestions&encode=url3986';
     var response = await http.get(url);

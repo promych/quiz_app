@@ -14,7 +14,9 @@ class Question {
     return Question(
       question: json['question'],
       correctAnswer: correctAnswer,
-      answers: List.from(incorrectAnswers)..add(correctAnswer),
+      answers: List.from(incorrectAnswers)
+        ..add(correctAnswer)
+        ..shuffle(),
     );
   }
 }

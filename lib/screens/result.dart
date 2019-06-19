@@ -27,7 +27,8 @@ class _ResultPageState extends State<ResultPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text('${app.correctAnswers} / ${widget.numQuestions}'),
+              Text(
+                  'Your score: ${app.correctAnswers} / ${widget.numQuestions}'),
               RaisedButton(
                 child: Text('Play Again'),
                 onPressed: () async {
